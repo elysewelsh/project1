@@ -18,41 +18,38 @@
 <body>
 
     <h1>IP Address Tracker</h1>
-    <div>
+    <div id="ipInputBar">
       <input id="ipInput" type="text" placeholder="Search for any IP address or domain" />
       <button id="searchButton">></button>
     </div>
-    <div>
-      <div>
+    <div id="infoBar" class="whiteBar">
+      <div id="AddressDiv">
         <h2>
           IP Address
         </h2>
-        <content>
-
+        <content id="AddressFill">
         </content>
       </div>
-      <div>
+      <div id="LocationDiv" class="whiteBar">
         <h2>
           Location
         </h2>
-        <content>
-          
+        <content id="LocationFill">
         </content>
       </div>
-      <div>
+      <div id="timeZoneDiv" class="whiteBar">
         <h2>
           Timezone
         </h2>
-        <content>
+        <content id="timeZoneFill">
               UTC <!-- add offset value dynamically using the API -->
         </content>
       </div>
-      <div>
+      <div id="ispDiv" class="whiteBar">
         <h2>
           ISP
         </h2>
-        <content>
-          
+        <content id="ispFill">
         </content>
       </div>
     </div>
