@@ -12,7 +12,8 @@
   <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script> -->
-  <script src="../dist/index.js" defer type="module"></script>
+  <!-- <script src="../dist/index.js" defer type="module"></script> -->
+  <script src="../src/index.ts" type="module"></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -25,25 +26,25 @@
   <div id="hero" class="img">
     <h1>IP Address Tracker</h1>
     <div id="ipInputBar">
-      <input id="ipInput" type="text" placeholder="Search for any IP address or domain" />
+      <input type="text" id="ipInput" placeholder="Search for any IP address or domain">
       <button id="searchButton">></button>
     </div>
 <!-- end of input bar div -->
   </div>
 <!-- end of hero image div -->
     <div id="infoBar" class="whiteBar">
-      <div id="AddressDiv">
+      <div id="addressDiv">
         <h2>
           IP Address
         </h2>
-        <content id="AddressFill">
+        <content id="addressFill">
         </content>
       </div>
-      <div id="LocationDiv" class="whiteBar">
+      <div id="locationDiv" class="whiteBar">
         <h2>
           Location
         </h2>
-        <content id="LocationFill">
+        <content id="locationFill">
         </content>
       </div>
       <div id="timeZoneDiv" class="whiteBar">
@@ -51,7 +52,6 @@
           Timezone
         </h2>
         <content id="timeZoneFill">
-              UTC <!-- add offset value dynamically using the API -->
         </content>
       </div>
       <div id="ispDiv" class="whiteBar">
