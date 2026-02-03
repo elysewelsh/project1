@@ -1,14 +1,17 @@
 // const ipInputElement: HTMLInputElement = document.getElementById("ipInput");
 
-import { map, latLng, tileLayer, MapOptions } from "leaflet";
+// import { map, latLng, tileLayer, MapOptions } from "leaflet";
+// import { lat, lng } from "./api/api.js"
 
-const ipInputElement = document.getElementById("ipInput") as HTMLInputElement;
-export const ipInput: string = ipInputElement.value;
-console.log(ipInput);
+// const ipInputElement = document.getElementById("ipInput") as HTMLInputElement;
+// export const ipInput: string = ipInputElement.value;
+// console.log(ipInput);
 
-const options: MapOptions = {
-  center: latLng(40.731253, -73.996139),
-  zoom: 12,
-};
+export const ipInput: string = "138.128.140.72"
 
-const ipMap = map('map', options);
+// const options: MapOptions = {
+//   center: latLng(lat, lng),
+//   zoom: 12,
+// };
+
+// const ipMap = map('map', options);
