@@ -11,13 +11,7 @@ const ipInputElement = document.getElementById("ipInput") as HTMLInputElement;
 // export const ipInput: string = "138.128.140.72";
 
 
-// HTML variables
-// const mapSpace = document.getElementById("map") as HTMLElement;
-const addressSpace = document.getElementById("addressFill") as HTMLElement;
-const locationSpace = document.getElementById("locationFill") as HTMLElement;
-const timeZoneSpace = document.getElementById("timeZoneFill") as HTMLElement;
-const ispSpace = document.getElementById("ispFill") as HTMLElement;
-const startBtn = document.getElementById("searchButton") as HTMLElement;
+
 
 async function run(ipInput: string) {
     const reply = await handleRequest(ipInput);
@@ -46,33 +40,9 @@ async function run(ipInput: string) {
     return undefined;
 }
 
-startBtn?.addEventListener('click',()=> {
-    const typedIp = ipInputElement.value;
-    run(typedIp) 
-// run returns toFill with variables from API response
-        .then((toFill) => {
-            if (typeof toFill !== "undefined") {
-// defines map options including centerpoint lat and long and zoom
-                const options: MapOptions = {
-                center: toFill.coordinates,
-                zoom: 12,
-                };
-// passes designated map div from HTML and options variable from above into pre-made map function from Leaflet
-                const ipMap = map('map', options);
-// adds a tile layer to map in the style and options chosen
-                tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap'
-                }).addTo(ipMap);   
-// adds information from API to designnated display spaces in HTML
-                addressSpace.innerText = (`${toFill.ip}`);
-                locationSpace.innerText = (`${toFill.city}, ${toFill.state} ${toFill.zip}`);
-                timeZoneSpace.innerText = (`UTC ${toFill.timezone}`);
-                ispSpace.innerText = (`${toFill.isp}`);
-            }
-            return undefined;
-        })
-});
+
+
+
 
 
 // const typedIp = "138.128.140.72";
