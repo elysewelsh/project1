@@ -1,6 +1,23 @@
-import { getAPIKey } from "./secret.js";
+// import { getAPIKey } from "./secret.js";
 // import { ipInput } from "../index.js";
 // import { LatLngLiteral } from "leaflet";
+
+
+import dotenv from 'dotenv';
+dotenv.config();
+async function getAPIKey() {
+    try {
+        if (typeof process.env.key !== "undefined") {
+            const API_KEY:string = process.env.key;
+            return API_KEY;
+        } else {
+            throw (new APIError("API Key could not be retrieved"))
+        };
+    }
+    catch(e) {
+        handleError(e as Error);
+    }
+};
 
 export interface IipInfo {
         ip: string, //ip address
@@ -27,15 +44,16 @@ export interface IipInfo {
 
 export async function handleRequest(ipInput: string) {
     try {
-        const API_KEY = getAPIKey();
+        const API_KEY = await getAPIKey();
         const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipInput}`); // returns a promise
         const replyObject: IipInfo = await response.json();
-        // if (typeof replyObject !== "undefined") {
+        if (typeof replyObject !== "undefined") {
             return replyObject;
-        // };
+        } else {
+            throw (new DataError("API response was undefined"))
+        }
     } catch(e) {
-        console.log(e);
-        return undefined;
+        handleError(e as Error)
     }
 }
 // handleRequest();
