@@ -2,6 +2,7 @@
 // import { ipInput } from "../index.js";
 // import { LatLngLiteral } from "leaflet";
 
+import { DataError, APIError, handleError } from "../utils/errorHandler"
 
 import dotenv from 'dotenv';
 dotenv.config();

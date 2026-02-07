@@ -17,7 +17,7 @@ npm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
-src/api/secret.ts
+# src/api/secret.ts
 *.txt
 
 # Testing

@@ -22,50 +22,56 @@ const startBtn = document.getElementById("searchButton") as HTMLElement;
 async function run(ipInput: string) {
     const reply = await handleRequest(ipInput);
     if (typeof reply  !== "undefined") {
-    const coordinates: LatLngLiteral = {
-        lat: reply.location.lat,
-        lng: reply.location.lng
-        };
-    const isp: string = reply.isp;
-    const ip: string = reply.ip;
-    const city: string = reply.location.city;
-    const state: string = reply.location.region;
-    const timezone: string = reply.location.timezone;
-    const zip: string = reply.location.postalcode;
-    const toFill = {
-        coordinates,
-        isp,
-        ip,
-        city,
-        state,
-        zip,
-        timezone
-    }
-    return toFill;
+        const coordinates: LatLngLiteral = {
+            lat: reply.location.lat,
+            lng: reply.location.lng
+            };
+        const isp: string = reply.isp;
+        const ip: string = reply.ip;
+        const city: string = reply.location.city;
+        const state: string = reply.location.region;
+        const timezone: string = reply.location.timezone;
+        const zip: string = reply.location.postalcode;
+        const toFill = {
+            coordinates,
+            isp,
+            ip,
+            city,
+            state,
+            zip,
+            timezone
+        }
+        return toFill;
     }
     return undefined;
 }
 
 startBtn?.addEventListener('click',()=> {
     const typedIp = ipInputElement.value;
-    run(typedIp).then((toFill) => {
-        if (typeof toFill !== "undefined") {
-            const options: MapOptions = {
-            center: toFill.coordinates,
-            zoom: 12,
-            };
-            const ipMap = map('map', options);
-            tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-            }).addTo(ipMap);   
-            addressSpace.innerText = (`${toFill.ip}`);
-            locationSpace.innerText = (`${toFill.city}, ${toFill.state} ${toFill.zip}`);
-            timeZoneSpace.innerText = (`UTC ${toFill.timezone}`);
-            ispSpace.innerText = (`${toFill.isp}`);
-        }
-        return undefined;
-    })
+    run(typedIp) 
+// run returns toFill with variables from API response
+        .then((toFill) => {
+            if (typeof toFill !== "undefined") {
+// defines map options including centerpoint lat and long and zoom
+                const options: MapOptions = {
+                center: toFill.coordinates,
+                zoom: 12,
+                };
+// passes designated map div from HTML and options variable from above into pre-made map function from Leaflet
+                const ipMap = map('map', options);
+// adds a tile layer to map in the style and options chosen
+                tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+                }).addTo(ipMap);   
+// adds information from API to designnated display spaces in HTML
+                addressSpace.innerText = (`${toFill.ip}`);
+                locationSpace.innerText = (`${toFill.city}, ${toFill.state} ${toFill.zip}`);
+                timeZoneSpace.innerText = (`UTC ${toFill.timezone}`);
+                ispSpace.innerText = (`${toFill.isp}`);
+            }
+            return undefined;
+        })
 });
 
 
