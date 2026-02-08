@@ -19,34 +19,6 @@ try {
         buttonAction(typedIp);
 }
 catch(e) {
-    handleError("index", e as Error);
+    handleError("Index", e as Error);
 };
 });
-    
-
-
-
-
-
-
-
-
-// const typedIp = "138.128.140.72";
-//     run(typedIp).then((toFill) => {
-//         if (typeof toFill !== "undefined") {
-//             const options: MapOptions = {
-//             center: toFill.coordinates,
-//             zoom: 12,
-//             };
-//             const ipMap = map('map', options);
-//             tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//             maxZoom: 19,
-//             attribution: '© OpenStreetMap'
-//             }).addTo(ipMap);
-//             addressSpace.innerText = (`${toFill.ip}`);
-//             locationSpace.innerText = (`${toFill.city}, ${toFill.state} ${toFill.zip}`);
-//             timezoneSpace.innerText = (`UTC ${toFill.timezone}`);
-//             ispSpace.innerText = (`${toFill.isp}`);
-//         }
-//         return undefined;
-//     })

@@ -19,10 +19,10 @@ export function handleError(trackTo: string, error: Error) {
 console.log("____________________________________________________");
 console.log("_______________________ERROR________________________");
     if (error instanceof APIError) {
-        console.error(`[API ERROR]: ${trackTo} `, error.message);
+        console.error(`[API ERROR]: ${error.message} from ${trackTo}` );
     } else if (error instanceof DataError) {
-        console.error(`[DATA ERROR]: ${trackTo} `, error.message);
+        console.error(`[DATA ERROR]: ${error.message} from ${trackTo}`);
     } else {
-        console.error(`[ERROR]: ${trackTo}`, error.message);
+        console.error(`[ERROR]: ${error.message} from ${trackTo}`);
     }
 };

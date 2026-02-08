@@ -22,6 +22,6 @@ export async function formatAPIdata (ipInput: string) {
                 }
             }
             catch(e) {
-                handleError("formatAPI", e as Error)
+                handleError("API Formatting", e as Error)
             };
         };

@@ -54,15 +54,15 @@ h2 {
   flex-direction: row;
   width: 35vw;
   height: 8vh;
-  border-radius: 20px;
   margin-top: 0;
   margin-bottom: 0;
+  box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
 }
 
 #ipInput {
-  width: 90%;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  width: 87%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border: none;
   font-family: Rubik;
   font-size: 18px;
@@ -73,11 +73,10 @@ h2 {
   background: black;
   color: white;
   text-align: center;
-  width: 10%;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 13%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   border: none;
-  /* margin-top: 20vh; */
 }
 
 #infoBar {
@@ -87,6 +86,7 @@ h2 {
   min-height: 20vh;
   min-width: 70vw;
   border-radius: 15px;
+  box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
 
 }
 

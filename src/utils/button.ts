@@ -27,7 +27,7 @@ try {
     };
 }
 catch(e) {
-    handleError("button", e as Error);
+    handleError("Button", e as Error);
 };
 };
 
