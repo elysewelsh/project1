@@ -3,20 +3,23 @@
 // import { LatLngLiteral } from "leaflet";
 
 import { DataError, APIError, handleError } from "../utils/errorHandler"
+import { getSecretKey } from "./secret"
+// import dotenv from 'dotenv';
 
-import dotenv from 'dotenv';
-dotenv.config();
 async function getAPIKey() {
+    // dotenv.config();
     try {
-        if (typeof process.env.key !== "undefined") {
-            const API_KEY:string = process.env.key;
-            return API_KEY;
-        } else {
-            throw (new APIError("API Key could not be retrieved"))
-        };
+        // if (typeof process.env.key !== "undefined") {
+        //     const API_KEY:string = process.env.key;
+        //     return API_KEY;
+        // } else {
+        //     throw (new APIError("API Key could not be retrieved"))
+        // };
+        const API_Key: string = getSecretKey();
+        return API_Key;
     }
     catch(e) {
-        handleError(e as Error);
+        handleError("API", e as Error);
     }
 };
 
@@ -54,7 +57,7 @@ export async function handleRequest(ipInput: string) {
             throw (new DataError("API response was undefined"))
         }
     } catch(e) {
-        handleError(e as Error)
+        handleError("API", e as Error)
     }
 }
 // handleRequest();

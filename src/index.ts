@@ -1,44 +1,30 @@
 // const ipInputElement: HTMLInputElement = document.getElementById("ipInput");
 
-import { map, tileLayer, MapOptions } from "leaflet";
-import { LatLngLiteral } from "leaflet"
-import { handleRequest } from "./api/api.js"
+import { handleError } from "./utils/errorHandler.js"
+import { buttonAction } from "./utils/button.js"
 
-const ipInputElement = document.getElementById("ipInput") as HTMLInputElement;
+export const ipInputElement = document.getElementById("ipInput") as HTMLInputElement;
 // export const ipInput: string = ipInputElement.value;
 // console.log(ipInput);
 
 // export const ipInput: string = "138.128.140.72";
 
 
+const startBtn = document.getElementById("searchButton") as HTMLElement;
 
 
-async function run(ipInput: string) {
-    const reply = await handleRequest(ipInput);
-    if (typeof reply  !== "undefined") {
-        const coordinates: LatLngLiteral = {
-            lat: reply.location.lat,
-            lng: reply.location.lng
-            };
-        const isp: string = reply.isp;
-        const ip: string = reply.ip;
-        const city: string = reply.location.city;
-        const state: string = reply.location.region;
-        const timezone: string = reply.location.timezone;
-        const zip: string = reply.location.postalcode;
-        const toFill = {
-            coordinates,
-            isp,
-            ip,
-            city,
-            state,
-            zip,
-            timezone
-        }
-        return toFill;
-    }
-    return undefined;
+startBtn?.addEventListener('click',()=> {
+try {
+    const typedIp = ipInputElement.value;
+        buttonAction(typedIp);
 }
+catch(e) {
+    handleError("index", e as Error);
+};
+});
+    
+
+
 
 
 

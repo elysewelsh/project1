@@ -15,14 +15,14 @@ export class DataError extends Error {
 };
 
 // input: error from other functions, output: formatted, informational error message in console
-export function handleError(error: Error) {
+export function handleError(trackTo: string, error: Error) {
 console.log("____________________________________________________");
 console.log("_______________________ERROR________________________");
     if (error instanceof APIError) {
-        console.error(`[API ERROR]: `, error.message);
+        console.error(`[API ERROR]: ${trackTo} `, error.message);
     } else if (error instanceof DataError) {
-        console.error(`[DATA ERROR]: `, error.message);
+        console.error(`[DATA ERROR]: ${trackTo} `, error.message);
     } else {
-        console.error(`[ERROR]:`, error.message);
+        console.error(`[ERROR]: ${trackTo}`, error.message);
     }
 };
