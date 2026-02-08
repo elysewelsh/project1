@@ -1,20 +1,120 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#float {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding-top: 5vh;
+  border: 3px solid blue;
+
+}
+
+h1 {
+  color: white
+}
 
 #ipInputBar {
-  z-index: 10000;
+  display: flex;
+  flex-direction: row;
 }
+
+#searchButton {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+#infoBar {
+  border: 3px dotted green;
+  position: relative;
+  top: 70px;
+  background-color: white;
+  min-height: 20vh;
+  min-width: 80vw;
+}
+
+#infoRow {
+  margin: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#addressDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-right: 5vw;
+  border-right: darkslategray 1px solid;
+}
+
+#locationDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-right: 5vw;
+  border-right: darkslategray 1px solid;
+}
+
+#timeZoneDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-right: 5vw;
+  border-right: darkslategray 1px solid;
+}
+
+#ispDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-right: 5vw;
+}
+
+/* #background {
+display: flex;
+flex-direction: column;
+z-index: -1;
+width: 100vw;
+height: 100vh;
+border: 3px solid purple;
+} */
 
 #hero {
-    position: relative; 
-    z-index: 1000; 
+    /* position: top sticky;  */
+    width: 100vw;
+    height: 35vh;
+    /* margin-bottom: -5vh; */
+    z-index: -1;
 }
 
-#map {
-    z-index: 1;     
-    width: 100%;
-    height: 60vh;
+#variable {
+  background-image: url('./images/pattern-bg-desktop.png');
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-size: cover;
+  min-height: 35vh;
+  width: 100vw;
+}
+
+#map {   
+    width: 100vw;
+    height: 100vh;
+    margin-top: -15vh;
+    z-index: -2;
 }
