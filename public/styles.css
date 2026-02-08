@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: 'Rubik', sans-serif;
 }
 
 #header {
@@ -19,12 +20,29 @@ body {
   margin-left: 10vw;
   margin-right: 10vw;
   padding-top: 5vh;
-  border: 3px solid blue;
-
 }
 
 h1 {
-  color: white
+  color: white;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0.25px; 
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 1.75px; 
+  color: #707070;
+}
+
+.whiteBar content {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0.25px;
+  color: #2C2C2C;
 }
 
 #ipInputBar {
@@ -39,34 +57,35 @@ h1 {
 }
 
 #infoBar {
-  border: 3px dotted green;
   position: relative;
   top: 70px;
   background-color: white;
   min-height: 20vh;
-  min-width: 80vw;
+  min-width: 70vw;
+  border-radius: 15px;
 }
 
 #infoRow {
   margin: 5vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1.5vw;
 }
 
 #addressDiv {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  padding-right: 5vw;
+  align-items: flex-start;
   border-right: darkslategray 1px solid;
+  padding-bottom: 2vh;
 }
 
 #locationDiv {
-  display: flex;
+  /* grid-column-end: 3; */
+  /* display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: start; */
+
   padding-right: 5vw;
   border-right: darkslategray 1px solid;
 }
@@ -75,6 +94,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  grid-column-start: 3;
+  grid-column-end: 4;
   padding-right: 5vw;
   border-right: darkslategray 1px solid;
 }
@@ -83,17 +104,10 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  grid-column-start: 4;
+  grid-column-end: 5;
   padding-right: 5vw;
 }
-
-/* #background {
-display: flex;
-flex-direction: column;
-z-index: -1;
-width: 100vw;
-height: 100vh;
-border: 3px solid purple;
-} */
 
 #hero {
     /* position: top sticky;  */
