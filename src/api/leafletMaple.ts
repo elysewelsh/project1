@@ -4,12 +4,6 @@ import { handleError } from "../utils/errorHandler";
 
 export function redrawMap (coordinates: LatLngLiteral) {
 try {
-// defines map options including centerpoint lat and long and zoom
-                // let options: MapOptions = {
-                // center: coordinates,
-                // zoom: 17,
-                // zoomControl: false
-                // };
 // passes designated map div from HTML and options variable from above into pre-made map function from Leaflet
                 let ipMap = map('map', {zoomControl: false}).setView(coordinates, 17);
 // adds a tile layer to map in the style and options chosen          
