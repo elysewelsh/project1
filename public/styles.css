@@ -17,11 +17,10 @@ body {
 #float {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-left: 10vw;
   margin-right: 10vw;
-  /* padding-top: 5vh; */
 }
 
 h1 {
@@ -56,7 +55,7 @@ h2 {
   height: 8vh;
   margin-top: 0;
   margin-bottom: 0;
-  box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
+  box-shadow: 0 50px 50px -25px rgb(0 0 0 /20%);
 }
 
 #ipInput {
@@ -66,7 +65,13 @@ h2 {
   border: none;
   font-family: Rubik;
   font-size: 18px;
-  padding-left: 1vw;
+  padding-left: 5%;
+}
+#inputError {
+  margin-top: 1vh;
+  color: white;
+  font-weight: bold;
+  text-shadow: 10px 10px 10px lightgray;
 }
 
 #searchButton {
@@ -87,7 +92,6 @@ h2 {
   min-width: 70vw;
   border-radius: 15px;
   box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
-
 }
 
 #infoRow {
@@ -97,13 +101,8 @@ h2 {
 }
 
 #addressDiv {
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start; */
   border-right: darkslategray 1px solid;
   padding-right: 2vw;
-  /* padding-left: 2vw; */
-  /* padding-right: 3vw; */
 }
 
 #locationDiv {
@@ -113,38 +112,19 @@ h2 {
 }
 
 #timeZoneDiv {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: start; */
-  /* grid-column-start: 3;
-  grid-column-end: 4; */
   padding-left: 2vw;
   padding-right: 2vw;
   border-right: darkslategray 1px solid;
 }
 
 #ispDiv {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: start; */
-  /* grid-column-start: 4;
-  grid-column-end: 5; */
   padding-left: 2vw;
   padding-right: 2vw;
-}
-
-#hero {
-    /* position: top sticky;  */
-    width: 100vw;
-    height: 35vh;
-    /* margin-bottom: -5vh; */
-    z-index: -1;
 }
 
 #variable {
   background-image: url('./images/pattern-bg-desktop.png');
   background-repeat: no-repeat;
-  /* background-size: cover; */
   background-size: cover;
   min-height: 35vh;
   width: 100vw;
@@ -155,4 +135,55 @@ h2 {
     height: 100vh;
     margin-top: -15vh;
     z-index: -2;
+}
+
+
+@media (width <= 800px) {
+  #variable {
+  background-image: url('./images/pattern-bg-desktop.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 35vh;
+  max-width: 100vw;
+}
+    #float {
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
+
+    #infoBar {
+      position: relative;
+      top: 50px;
+      background-color: white;
+      min-height: 20vh;
+      min-width: 70vw;
+      border-radius: 15px;
+      box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
+    }
+
+    #infoRow {
+      background: white;
+      border: 3px red solid;
+    }
+
+    #addressDiv {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      padding-right: 2vw;
+    }
+
+    #locationDiv {
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
+
+    #timeZoneDiv {
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
+
+    #ispDiv {
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
 }

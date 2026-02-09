@@ -23,7 +23,7 @@ try {
                 };
             });
     } else {
-        throw (new DataError("this should really go in an error span"));
+        throw (new DataError("Not a valid IP address"));
     };
 }
 catch(e) {
@@ -31,21 +31,4 @@ catch(e) {
 };
 };
 
-
-
-// returns pageFillInfo with variables from API response
-        // .then((pageFillInfo: ) => {
-        //     if (typeof pageFillInfo !== "undefined") {
-// map function goes here
-
-
-// adds information from API to designnated display spaces in HTML
-//                 addressSpace.innerText = (`${toFill.ip}`);
-//                 locationSpace.innerText = (`${toFill.city}, ${toFill.state} ${toFill.zip}`);
-//                 timeZoneSpace.innerText = (`UTC ${toFill.timezone}`);
-//                 ispSpace.innerText = (`${toFill.isp}`);
-//             }
-//             return undefined;
-//         })
-// });
 

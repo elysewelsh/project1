@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script> -->
@@ -23,42 +24,42 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> -->
 </head>
+
 <body>
-      <!-- <div id="foo">
-          <img src="./images/pattern-bg-desktop.png"/>
-      </div> -->
-      <div id="variable">
-      <div id="float">
+  <div id="variable">
+    <div id="float">
         <div id="header">
-          <h1>IP Address Tracker</h1>
-          <div id="ipInputBar">
-              <input type="text" id="ipInput" placeholder="Search for any IP address or domain">
-              <button id="searchButton">
-                <img src="./images/icon-arrow.svg"
-              </button>
-            </div>
+            <h1>IP Address Tracker</h1>
+            <div id="ipInputBar">
+                <input type="text" id="ipInput" placeholder="Search for any IP address or domain">
+                <button id="searchButton">
+                  <img src="./images/icon-arrow.svg">
+                </button>
+              </div>
+              <!-- end of input bar div -->
+            <span id="inputError"></span>
           </div>
-        <!-- end of input bar div -->
-          <div id="infoBar" class="whiteBar">
+          <!-- end of header div -->
+        <div id="infoBar" class="whiteBar">
             <div id="infoRow">
                 <div id="addressDiv">
                     <h2>
-                      IP Address
+                        IP Address
                     </h2>
                     <content id="addressFill">
-                      &nbsp;
+                        &nbsp;
                     </content>
-                </div>
+                  </div>
                 <div id="locationDiv" class="whiteBar">
                     <h2>
-                      Location
+                        Location
                     </h2>
                     <content id="locationFill">
                     </content>
                 </div>
                 <div id="timeZoneDiv" class="whiteBar">
                     <h2>
-                      Timezone
+                        Timezone
                     </h2>
                     <content id="timeZoneFill">
                     </content>
@@ -70,23 +71,24 @@
                     <content id="ispFill">
                     </content>
                 </div>
-                </div>
             </div>
-          <!-- end of the whitebar -->
+            <!-- end of info ROW-->
         </div>
-      </div>
+        <!-- end of the info/whitebar -->
+    </div>
     <!-- end of float div -->
-    <!-- end of info bar div -->
-    <!-- <div id="background"> -->
-      <div id = "map-wrapper">
-          <div id ="map">
-          </div>
-      </div>
-    <!-- </div> -->
-<!-- end of background div -->
+  </div>
+  <!-- end of variable div -->
+  
+  <div id="map-wrapper">
+    <div id="map">
+    </div>
+  </div>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Elyse Welsh</a>.
   </div>
 </body>
+
 </html>
