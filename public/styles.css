@@ -38,6 +38,7 @@ h2 {
   line-height: 100%;
   letter-spacing: 1.75px; 
   color: #707070;
+  margin-bottom: 3vh;
 }
 
 .whiteBar content {
@@ -92,29 +93,32 @@ h2 {
   min-width: 70vw;
   border-radius: 15px;
   box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #infoRow {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 2.5%;
 }
 
 #addressDiv {
-  border-right: darkslategray 1px solid;
-  padding-right: 2vw;
+  border-right: #949494 1px solid;
+  padding-right: 5vw;
 }
 
 #locationDiv {
   padding-left: 2vw;
-  padding-right: 2vw;
-  border-right: darkslategray 1px solid;
+  padding-right: 5vw;
+  border-right: #949494 1px solid;
 }
 
 #timeZoneDiv {
   padding-left: 2vw;
-  padding-right: 2vw;
-  border-right: darkslategray 1px solid;
+  padding-right: 5vw;
+  border-right: #949494 1px solid;
 }
 
 #ispDiv {
@@ -138,52 +142,78 @@ h2 {
 }
 
 
-@media (width <= 800px) {
-  #variable {
-  background-image: url('./images/pattern-bg-desktop.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 35vh;
-  max-width: 100vw;
-}
+@media screen and (max-width: 800px) {
+      #variable {
+      background-image: url('./images/pattern-bg-mobile.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-height: 35vh;
+      max-width: 100vw;
+    }
+
     #float {
-      margin-left: 10vw;
-      margin-right: 10vw;
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+
+    #ipInputBar {
+
+      min-width: 90vw;
+      height: 8vh;
+      margin-top: 0;
+      margin-bottom: 0;
+      box-shadow: 0 50px 50px -25px rgb(0 0 0 /20%);
     }
 
     #infoBar {
       position: relative;
-      top: 50px;
+      top: 20px;
       background-color: white;
-      min-height: 20vh;
-      min-width: 70vw;
+      min-width: 90vw;
       border-radius: 15px;
       box-shadow: 0px 50px 50px -25px rgb(0 0 0 /20%);
     }
 
     #infoRow {
       background: white;
-      border: 3px red solid;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
     }
 
     #addressDiv {
-      grid-row-start: 1;
-      grid-row-end: 2;
-      padding-right: 2vw;
+      border: none;
+      margin-top: 2vh;
+      margin: 1vh;
+      padding: 0;
     }
 
     #locationDiv {
-      padding-left: 2vw;
-      padding-right: 2vw;
+      border: none;
+      margin: 1vh;
+      padding: 0;
     }
 
     #timeZoneDiv {
-      padding-left: 2vw;
-      padding-right: 2vw;
+      border: none;
+      margin: 1vh;
+      padding: 0;
     }
 
     #ispDiv {
-      padding-left: 2vw;
-      padding-right: 2vw;
+      border: none;
+      margin: 1vh;
+      margin-bottom: 2vh;
+      padding: 0;
     }
+
+    h2 {
+      margin-bottom: 1.25vh;
+    }
+
+    #map {   
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+}
 }
