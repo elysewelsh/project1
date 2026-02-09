@@ -31,6 +31,8 @@ catch(e) {
 };
 };
 
+
+
 // returns pageFillInfo with variables from API response
         // .then((pageFillInfo: ) => {
         //     if (typeof pageFillInfo !== "undefined") {

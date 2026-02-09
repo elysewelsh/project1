@@ -101,6 +101,7 @@ h2 {
   flex-direction: column;
   align-items: flex-start; */
   border-right: darkslategray 1px solid;
+  padding-right: 2vw;
   /* padding-left: 2vw; */
   /* padding-right: 3vw; */
 }

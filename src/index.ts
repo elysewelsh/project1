@@ -14,11 +14,21 @@ const startBtn = document.getElementById("searchButton") as HTMLElement;
 
 
 startBtn?.addEventListener('click',()=> {
-try {
-    const typedIp = ipInputElement.value;
+    try {
+        removeMapContainer();
+    let typedIp = ipInputElement.value;
+    
         buttonAction(typedIp);
 }
 catch(e) {
     handleError("Index", e as Error);
 };
 });
+
+
+function removeMapContainer(){
+    var container = document.getElementById('map') as HTMLElement;
+    if (container) {
+        container.outerHTML = '<div id="map"></div';
+    }
+};

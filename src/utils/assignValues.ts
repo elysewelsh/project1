@@ -15,12 +15,14 @@ try {
     } else {
         addressSpace.innerText = "Not Found";
     };
-    if (typeof pageFillInfo.state === "undefined" || typeof pageFillInfo.zip === "undefined") {
+    if (typeof pageFillInfo.state === "undefined" && typeof pageFillInfo.zip === "undefined") {
         locationSpace.innerText = pageFillInfo.city;
     } else if (typeof pageFillInfo.zip === "undefined" && typeof pageFillInfo.state !== "undefined") {
         locationSpace.innerText = `${pageFillInfo.city}, ${pageFillInfo.state}`
     } else if (typeof pageFillInfo.zip !== "undefined" && typeof pageFillInfo.state === "undefined") {
         locationSpace.innerText = `${pageFillInfo.city}, ${pageFillInfo.state}`
+    } else if (pageFillInfo.state !== "undefined" && typeof pageFillInfo.zip !== "undefined") {
+        locationSpace.innerText = `${pageFillInfo.city}, ${pageFillInfo.state} ${pageFillInfo.zip}`
     } else {
         locationSpace.innerText = "Not Found"
     };
