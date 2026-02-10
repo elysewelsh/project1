@@ -1,6 +1,6 @@
 
 import { DataError, APIError, handleError } from "../utils/errorHandler"
-import { getAPIKey } from "..";
+// import { getAPIKey } from "..";
 
 
 
@@ -30,8 +30,9 @@ export interface IipInfo {
 
 export async function handleRequest(ipInput: string) {
     try {
-        const API_KEY = await getAPIKey();
-        const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipInput}`); // returns a promise
+        // const API_KEY = await getAPIKey();
+        // const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipInput}`);
+        const response = await fetch(`/.netlify/functions/get-ip?ipAddress=${ipInput}`);
         if (response.status === 200 || response.status === 304) {
             const replyObject: IipInfo = await response.json();
             if (typeof replyObject !== "undefined") {
