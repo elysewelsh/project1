@@ -12,7 +12,7 @@ try {
                 attribution: '© OpenStreetMap'
                 }).addTo(ipMap);
                 let blackIcon: IconOptions = {
-                    iconUrl: 'icon-location.svg',
+                    iconUrl: '/icon-location.svg',
                     iconSize:     [38, 50], // size of the icon
                     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
                 };
